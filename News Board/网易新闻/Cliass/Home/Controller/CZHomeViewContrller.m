@@ -82,6 +82,8 @@
 {
     CZContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ContentCell" forIndexPath:indexPath];
 
+    CZChannelModle *channel = self.channles[indexPath.item];
+    cell.channel = channel;
     
     return cell;
 }

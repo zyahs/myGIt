@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CZChannelModle;
 @interface CZContentCell : UICollectionViewCell
-
+/**
+ *  <#Description#>
+ */
+@property (nonatomic,strong)CZChannelModle *channel;
 @end

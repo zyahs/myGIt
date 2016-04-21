@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC541C013C8039A1D40FAFAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E99E96CC16737CD170F57EB5 /* libPods.a */; };
 		D3FCED921CC86F7500C9FC82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCED911CC86F7500C9FC82 /* main.m */; };
 		D3FCED951CC86F7500C9FC82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCED941CC86F7500C9FC82 /* AppDelegate.m */; };
 		D3FCED9B1CC86F7500C9FC82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FCED991CC86F7500C9FC82 /* Main.storyboard */; };
@@ -19,9 +20,13 @@
 		D3FCEDBD1CC87BD100C9FC82 /* CZChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDBC1CC87BD100C9FC82 /* CZChannelLabel.m */; };
 		D3FCEDC11CC87C9E00C9FC82 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDC01CC87C9E00C9FC82 /* UIView+Frame.m */; };
 		D3FCEDC41CC881E700C9FC82 /* CZContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDC31CC881E700C9FC82 /* CZContentCell.m */; };
+		D3FCEDCA1CC8AEE300C9FC82 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FCEDC91CC8AEE300C9FC82 /* News.storyboard */; };
+		D3FCEDCD1CC8AF1500C9FC82 /* CZNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDCC1CC8AF1500C9FC82 /* CZNewsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32EA31A863AD909298D42A70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CF0BC4ACDBA482EAE318756F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D3FCED8D1CC86F7500C9FC82 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3FCED911CC86F7500C9FC82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3FCED931CC86F7500C9FC82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,6 +48,10 @@
 		D3FCEDC01CC87C9E00C9FC82 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		D3FCEDC21CC881E700C9FC82 /* CZContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZContentCell.h; sourceTree = "<group>"; };
 		D3FCEDC31CC881E700C9FC82 /* CZContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZContentCell.m; sourceTree = "<group>"; };
+		D3FCEDC91CC8AEE300C9FC82 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = News.storyboard; path = Cliass/News/VIew/News.storyboard; sourceTree = "<group>"; };
+		D3FCEDCB1CC8AF1500C9FC82 /* CZNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZNewsTableViewController.h; sourceTree = "<group>"; };
+		D3FCEDCC1CC8AF1500C9FC82 /* CZNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNewsTableViewController.m; sourceTree = "<group>"; };
+		E99E96CC16737CD170F57EB5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,17 +59,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC541C013C8039A1D40FAFAE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D826E9317E964D3A414F98D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32EA31A863AD909298D42A70 /* Pods.debug.xcconfig */,
+				CF0BC4ACDBA482EAE318756F /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CCE7B011BA687C3A72169A71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E99E96CC16737CD170F57EB5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D3FCED841CC86F7500C9FC82 = {
 			isa = PBXGroup;
 			children = (
 				D3FCED8F1CC86F7500C9FC82 /* 网易新闻 */,
 				D3FCED8E1CC86F7500C9FC82 /* Products */,
+				1D826E9317E964D3A414F98D /* Pods */,
+				CCE7B011BA687C3A72169A71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +108,7 @@
 				D3FCED931CC86F7500C9FC82 /* AppDelegate.h */,
 				D3FCED941CC86F7500C9FC82 /* AppDelegate.m */,
 				D3FCED991CC86F7500C9FC82 /* Main.storyboard */,
+				D3FCEDC91CC8AEE300C9FC82 /* News.storyboard */,
 				D3FCEDAF1CC8723B00C9FC82 /* topic_news.json */,
 				D3FCED9C1CC86F7500C9FC82 /* Assets.xcassets */,
 				D3FCED9E1CC86F7500C9FC82 /* LaunchScreen.storyboard */,
@@ -99,6 +129,7 @@
 		D3FCEDA71CC8700000C9FC82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCEDC51CC8AE8700C9FC82 /* News */,
 				D3FCEDBE1CC87C9E00C9FC82 /* Common */,
 				D3FCEDB71CC8775600C9FC82 /* Log */,
 				D3FCEDB11CC8736300C9FC82 /* Channel */,
@@ -188,6 +219,39 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		D3FCEDC51CC8AE8700C9FC82 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				D3FCEDC61CC8AE8700C9FC82 /* Controller */,
+				D3FCEDC71CC8AE8700C9FC82 /* Models */,
+				D3FCEDC81CC8AE8700C9FC82 /* VIew */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		D3FCEDC61CC8AE8700C9FC82 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3FCEDCB1CC8AF1500C9FC82 /* CZNewsTableViewController.h */,
+				D3FCEDCC1CC8AF1500C9FC82 /* CZNewsTableViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3FCEDC71CC8AE8700C9FC82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D3FCEDC81CC8AE8700C9FC82 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +259,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3FCEDA41CC86F7500C9FC82 /* Build configuration list for PBXNativeTarget "网易新闻" */;
 			buildPhases = (
+				5D27366FE34E06D434B8C2D3 /* Check Pods Manifest.lock */,
 				D3FCED891CC86F7500C9FC82 /* Sources */,
 				D3FCED8A1CC86F7500C9FC82 /* Frameworks */,
 				D3FCED8B1CC86F7500C9FC82 /* Resources */,
+				6BD6F5F522A1E2A88E5C7252 /* Embed Pods Frameworks */,
+				EB710626180142D5C5766ED8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -249,6 +316,7 @@
 			files = (
 				D3FCEDA01CC86F7500C9FC82 /* LaunchScreen.storyboard in Resources */,
 				D3FCED9D1CC86F7500C9FC82 /* Assets.xcassets in Resources */,
+				D3FCEDCA1CC8AEE300C9FC82 /* News.storyboard in Resources */,
 				D3FCEDB01CC8723B00C9FC82 /* topic_news.json in Resources */,
 				D3FCED9B1CC86F7500C9FC82 /* Main.storyboard in Resources */,
 			);
@@ -256,12 +324,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5D27366FE34E06D434B8C2D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6BD6F5F522A1E2A88E5C7252 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB710626180142D5C5766ED8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D3FCED891CC86F7500C9FC82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D3FCEDBA1CC8775600C9FC82 /* NSArray+Log.m in Sources */,
+				D3FCEDCD1CC8AF1500C9FC82 /* CZNewsTableViewController.m in Sources */,
 				D3FCEDBD1CC87BD100C9FC82 /* CZChannelLabel.m in Sources */,
 				D3FCEDC41CC881E700C9FC82 /* CZContentCell.m in Sources */,
 				D3FCED951CC86F7500C9FC82 /* AppDelegate.m in Sources */,
@@ -378,6 +495,7 @@
 		};
 		D3FCEDA51CC86F7500C9FC82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32EA31A863AD909298D42A70 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "网易新闻/Info.plist";
@@ -389,6 +507,7 @@
 		};
 		D3FCEDA61CC86F7500C9FC82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF0BC4ACDBA482EAE318756F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "网易新闻/Info.plist";

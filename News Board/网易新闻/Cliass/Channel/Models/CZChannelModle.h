@@ -10,6 +10,10 @@
 
 @interface CZChannelModle : NSObject
 /**
+ *  频道对应标签的 URLString
+ */
+@property (nonatomic,copy,readonly) NSString *tidURLString;
+/**
  *  加载不同频道的数据
  */
 @property (nonatomic,copy)NSString *tid;

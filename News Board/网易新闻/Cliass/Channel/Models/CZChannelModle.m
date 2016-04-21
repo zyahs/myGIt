@@ -9,6 +9,21 @@
 #import "CZChannelModle.h"
 
 @implementation CZChannelModle
+- (void)setTid:(NSString *)tid
+{
+    _tid = tid;
+    //生成 tid 对应的 URLString
+    //判断是否头条
+    if ([tid isEqualToString:@"T1348647853363"]) {
+        _tidURLString = @"";
+    }
+else
+{
+    _tidURLString = [NSString stringWithFormat:@"%@",_tid];
+
+}
+
+}
 
 /**
  *  自爱单
