@@ -16,6 +16,8 @@
 		D3FCEDB01CC8723B00C9FC82 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FCEDAF1CC8723B00C9FC82 /* topic_news.json */; };
 		D3FCEDB61CC8737C00C9FC82 /* CZChannelModle.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDB51CC8737C00C9FC82 /* CZChannelModle.m */; };
 		D3FCEDBA1CC8775600C9FC82 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDB91CC8775600C9FC82 /* NSArray+Log.m */; };
+		D3FCEDBD1CC87BD100C9FC82 /* CZChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDBC1CC87BD100C9FC82 /* CZChannelLabel.m */; };
+		D3FCEDC11CC87C9E00C9FC82 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDC01CC87C9E00C9FC82 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,10 @@
 		D3FCEDB51CC8737C00C9FC82 /* CZChannelModle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZChannelModle.m; sourceTree = "<group>"; };
 		D3FCEDB81CC8775600C9FC82 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		D3FCEDB91CC8775600C9FC82 /* NSArray+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		D3FCEDBB1CC87BD100C9FC82 /* CZChannelLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZChannelLabel.h; sourceTree = "<group>"; };
+		D3FCEDBC1CC87BD100C9FC82 /* CZChannelLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZChannelLabel.m; sourceTree = "<group>"; };
+		D3FCEDBF1CC87C9E00C9FC82 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		D3FCEDC01CC87C9E00C9FC82 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		D3FCEDA71CC8700000C9FC82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCEDBE1CC87C9E00C9FC82 /* Common */,
 				D3FCEDB71CC8775600C9FC82 /* Log */,
 				D3FCEDB11CC8736300C9FC82 /* Channel */,
 				D3FCEDA81CC8700000C9FC82 /* Home */,
@@ -127,6 +134,8 @@
 		D3FCEDAB1CC8700000C9FC82 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCEDBB1CC87BD100C9FC82 /* CZChannelLabel.h */,
+				D3FCEDBC1CC87BD100C9FC82 /* CZChannelLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -163,6 +172,15 @@
 				D3FCEDB91CC8775600C9FC82 /* NSArray+Log.m */,
 			);
 			path = Log;
+			sourceTree = "<group>";
+		};
+		D3FCEDBE1CC87C9E00C9FC82 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D3FCEDBF1CC87C9E00C9FC82 /* UIView+Frame.h */,
+				D3FCEDC01CC87C9E00C9FC82 /* UIView+Frame.m */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +257,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3FCEDBA1CC8775600C9FC82 /* NSArray+Log.m in Sources */,
+				D3FCEDBD1CC87BD100C9FC82 /* CZChannelLabel.m in Sources */,
 				D3FCED951CC86F7500C9FC82 /* AppDelegate.m in Sources */,
+				D3FCEDC11CC87C9E00C9FC82 /* UIView+Frame.m in Sources */,
 				D3FCEDAE1CC8706000C9FC82 /* CZHomeViewContrller.m in Sources */,
 				D3FCEDB61CC8737C00C9FC82 /* CZChannelModle.m in Sources */,
 				D3FCED921CC86F7500C9FC82 /* main.m in Sources */,

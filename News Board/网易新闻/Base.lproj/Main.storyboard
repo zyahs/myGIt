@@ -8,8 +8,7 @@
         <!--网易新闻-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController id="BYZ-38-t0r" customClass="CZHomeViewContrller" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CZHomeViewContrller" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -57,7 +56,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="网易新闻" id="QfE-gI-juW"/>
+                    <connections>
+                        <outlet property="channelScrollView" destination="Q3R-np-cUX" id="eVW-8c-YhB"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="457" y="474"/>
         </scene>
