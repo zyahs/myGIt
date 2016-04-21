@@ -9,11 +9,7 @@
 #import "CZChannelModle.h"
 
 @implementation CZChannelModle
-//platform :ios, '7.0'
-//pod "AFNetworking"
-//pod "SDWebImage"
-//pod "TAPageControl"
-//pod "Masonry"
+
 /**
  *  自爱单
  *
@@ -33,11 +29,11 @@
 {
 }
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@---%@",self.tid,self.tname];
-
-}
+//- (NSString *)description
+//{
+////    return [NSString stringWithFormat:@"%@---%@",self.tid,self.tname];
+//
+//}
 
 + (NSArray *)channels
 {
@@ -65,7 +61,7 @@
     }
 
 
-    NSLog(@"%@",channels);
+//    NSLog(@"%@",channels);
     //6.对上面的 channels 排序
     [channels sortUsingComparator:^NSComparisonResult(CZChannelModle  *obj1, CZChannelModle *obj2) {
         return [obj1.tid compare:obj2.tid];
