@@ -22,6 +22,9 @@
 		D3FCEDC41CC881E700C9FC82 /* CZContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDC31CC881E700C9FC82 /* CZContentCell.m */; };
 		D3FCEDCA1CC8AEE300C9FC82 /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FCEDC91CC8AEE300C9FC82 /* News.storyboard */; };
 		D3FCEDCD1CC8AF1500C9FC82 /* CZNewsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDCC1CC8AF1500C9FC82 /* CZNewsTableViewController.m */; };
+		D3FCEDD01CC8B4F600C9FC82 /* CZNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDCF1CC8B4F600C9FC82 /* CZNews.m */; };
+		D3FCEDD41CC8BB8000C9FC82 /* CZNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDD31CC8BB8000C9FC82 /* CZNetWorkTool.m */; };
+		D3FCEDD71CC8C4AC00C9FC82 /* CZNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCEDD61CC8C4AC00C9FC82 /* CZNewsCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,12 @@
 		D3FCEDC91CC8AEE300C9FC82 /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = News.storyboard; path = Cliass/News/VIew/News.storyboard; sourceTree = "<group>"; };
 		D3FCEDCB1CC8AF1500C9FC82 /* CZNewsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZNewsTableViewController.h; sourceTree = "<group>"; };
 		D3FCEDCC1CC8AF1500C9FC82 /* CZNewsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNewsTableViewController.m; sourceTree = "<group>"; };
+		D3FCEDCE1CC8B4F600C9FC82 /* CZNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZNews.h; sourceTree = "<group>"; };
+		D3FCEDCF1CC8B4F600C9FC82 /* CZNews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNews.m; sourceTree = "<group>"; };
+		D3FCEDD21CC8BB8000C9FC82 /* CZNetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZNetWorkTool.h; sourceTree = "<group>"; };
+		D3FCEDD31CC8BB8000C9FC82 /* CZNetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNetWorkTool.m; sourceTree = "<group>"; };
+		D3FCEDD51CC8C4AC00C9FC82 /* CZNewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZNewsCell.h; sourceTree = "<group>"; };
+		D3FCEDD61CC8C4AC00C9FC82 /* CZNewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZNewsCell.m; sourceTree = "<group>"; };
 		E99E96CC16737CD170F57EB5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +138,7 @@
 		D3FCEDA71CC8700000C9FC82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCEDD11CC8BB6400C9FC82 /* NetWorkTool */,
 				D3FCEDC51CC8AE8700C9FC82 /* News */,
 				D3FCEDBE1CC87C9E00C9FC82 /* Common */,
 				D3FCEDB71CC8775600C9FC82 /* Log */,
@@ -241,6 +251,8 @@
 		D3FCEDC71CC8AE8700C9FC82 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCEDCE1CC8B4F600C9FC82 /* CZNews.h */,
+				D3FCEDCF1CC8B4F600C9FC82 /* CZNews.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,8 +260,19 @@
 		D3FCEDC81CC8AE8700C9FC82 /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				D3FCEDD51CC8C4AC00C9FC82 /* CZNewsCell.h */,
+				D3FCEDD61CC8C4AC00C9FC82 /* CZNewsCell.m */,
 			);
 			path = VIew;
+			sourceTree = "<group>";
+		};
+		D3FCEDD11CC8BB6400C9FC82 /* NetWorkTool */ = {
+			isa = PBXGroup;
+			children = (
+				D3FCEDD21CC8BB8000C9FC82 /* CZNetWorkTool.h */,
+				D3FCEDD31CC8BB8000C9FC82 /* CZNetWorkTool.m */,
+			);
+			path = NetWorkTool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,11 +400,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FCEDD41CC8BB8000C9FC82 /* CZNetWorkTool.m in Sources */,
+				D3FCEDD71CC8C4AC00C9FC82 /* CZNewsCell.m in Sources */,
 				D3FCEDBA1CC8775600C9FC82 /* NSArray+Log.m in Sources */,
 				D3FCEDCD1CC8AF1500C9FC82 /* CZNewsTableViewController.m in Sources */,
 				D3FCEDBD1CC87BD100C9FC82 /* CZChannelLabel.m in Sources */,
 				D3FCEDC41CC881E700C9FC82 /* CZContentCell.m in Sources */,
 				D3FCED951CC86F7500C9FC82 /* AppDelegate.m in Sources */,
+				D3FCEDD01CC8B4F600C9FC82 /* CZNews.m in Sources */,
 				D3FCEDC11CC87C9E00C9FC82 /* UIView+Frame.m in Sources */,
 				D3FCEDAE1CC8706000C9FC82 /* CZHomeViewContrller.m in Sources */,
 				D3FCEDB61CC8737C00C9FC82 /* CZChannelModle.m in Sources */,

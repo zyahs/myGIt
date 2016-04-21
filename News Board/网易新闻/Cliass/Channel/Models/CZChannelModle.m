@@ -15,13 +15,10 @@
     //生成 tid 对应的 URLString
     //判断是否头条
     if ([tid isEqualToString:@"T1348647853363"]) {
-        _tidURLString = @"";
+        _tidURLString = [NSString stringWithFormat:@"article/headline/%@/0-40.html",_tid];
+    }else{
+        _tidURLString = [NSString stringWithFormat:@"article/list/%@/0-40.html",_tid];
     }
-else
-{
-    _tidURLString = [NSString stringWithFormat:@"%@",_tid];
-
-}
 
 }
 

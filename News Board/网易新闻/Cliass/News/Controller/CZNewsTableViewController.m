@@ -7,9 +7,13 @@
 //
 
 #import "CZNewsTableViewController.h"
-
+#import "CZNewsCell.h"
+#import "CZNews.h"
 @interface CZNewsTableViewController ()
-
+/**
+ *  <#Description#>
+ */
+@property (nonatomic,strong)NSArray *innerNewsList;
 @end
 
 @implementation CZNewsTableViewController
@@ -17,8 +21,26 @@
 - (void)setTidURLString:(NSString *)tidURLString
 {
     _tidURLString = tidURLString;
-
+//    NSLog(@"%@",tidURLString);
+    //调用模型的方法去放松求情
+    __weak typeof (self) weakSelf =  self   ;
+    [CZNews newsListWithURLString:tidURLString finishedBlock:^(NSArray *newList) {
+        //把数据解析,转成控制器需要的模型数据
+        self.innerNewsList = newList;
+        
+        [weakSelf.tableView reloadData];
+        
+    }];
+    
 }
+
+
+
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -36,26 +58,56 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Incomplete implementation, return the number of sections
+//    return 0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    return self.innerNewsList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString *str = nil;
     
+    CZNews *news = self.innerNewsList[indexPath.row];
+    if (news.imgType) {
+        str = @"BigCell";
+    }else if (news.imgextra.count == 2)
+    {
+    str = @"ThreeImage";
+    }
+    else
+    {
+    str = @"BaseCell";
+    }
+    
+    CZNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:str forIndexPath:indexPath];
+
     // Configure the cell...
     
+    cell.news =self.innerNewsList[indexPath.row];
     return cell;
 }
-*/
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+CZNews *news = self.innerNewsList[indexPath.row];
+    if (news.imgType) {
+        return 180;
+    }else if (news.imgextra.count == 2)
+    {
+        return 120;
+    }
+    else
+    {
+        return 80;
+    }
+
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
