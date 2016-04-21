@@ -66,7 +66,7 @@
 		D3FCED8F1CC86F7500C9FC82 /* 网易新闻 */ = {
 			isa = PBXGroup;
 			children = (
-				D3FCEDA71CC8700000C9FC82 /* Cliass */,
+				D3FCEDA71CC8700000C9FC82 /* Classes */,
 				D3FCED931CC86F7500C9FC82 /* AppDelegate.h */,
 				D3FCED941CC86F7500C9FC82 /* AppDelegate.m */,
 				D3FCED991CC86F7500C9FC82 /* Main.storyboard */,
@@ -87,13 +87,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D3FCEDA71CC8700000C9FC82 /* Cliass */ = {
+		D3FCEDA71CC8700000C9FC82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				D3FCEDB71CC8775600C9FC82 /* Log */,
 				D3FCEDB11CC8736300C9FC82 /* Channel */,
 				D3FCEDA81CC8700000C9FC82 /* Home */,
 			);
+			name = Classes;
 			path = Cliass;
 			sourceTree = "<group>";
 		};
@@ -390,6 +391,7 @@
 				D3FCEDA61CC86F7500C9FC82 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
