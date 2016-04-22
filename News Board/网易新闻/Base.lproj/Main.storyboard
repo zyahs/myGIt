@@ -44,6 +44,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="O55-K7-fOz"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="QAQ-gk-pGk"/>
                                 </connections>
                             </collectionView>
                         </subviews>

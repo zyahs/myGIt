@@ -11,7 +11,7 @@
 #import "CZChannelLabel.h"
 #import "UIView+Frame.h"
 #import "CZContentCell.h"
-@interface CZHomeViewContrller ()<UICollectionViewDataSource>
+@interface CZHomeViewContrller ()<UICollectionViewDataSource,UICollectionViewDelegate>
 /**
  *  频道的滚动标签
  */
@@ -27,10 +27,24 @@
 @property (nonatomic,strong)NSArray *channles;
 
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *contentFlowLayout;
-
+/**
+ *  控件数组
+ */
+@property (nonatomic,strong) NSMutableArray *channelLabels;
+/**
+ *  当前选中的 Label
+ */
+@property (nonatomic,weak)CZChannelLabel *currentSelectLabel;
 @end
 @implementation CZHomeViewContrller
+- (NSMutableArray *)channelLabels
+{
+    if (!_channelLabels) {
+        _channelLabels = [NSMutableArray array];
+    }
 
+    return _channelLabels;
+}
 -(void)viewDidLoad
 {
     [self setChannelLabel];
@@ -60,6 +74,18 @@
         
         //1.3添加到父控件
         [self.channelScrollView addSubview:channelLabel];
+        
+        //1.4添加 tag 值
+        channelLabel.tag = i;
+        //1.5 添加手势
+//        UITapGestureRecognizer *tap = [UITapGestureRecognizer alloc]initWithTarget:<#(nullable id)#> action:<#(nullable SEL)#>
+        [channelLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(channelClick:)]];
+        //开启交互
+        channelLabel.userInteractionEnabled = YES;
+        //1.6 把刚刚创建出来的 chanlabel 添加到控件数组
+        [self.channelLabels addObject:channelLabel];
+        
+        
     }
     //3 设置 ContentSize
     self.channelScrollView.contentSize = CGSizeMake(channelLabelW *self.channles.count, 0);
@@ -83,6 +109,7 @@
     CZContentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ContentCell" forIndexPath:indexPath];
 
     CZChannelModle *channel = self.channles[indexPath.item];
+ 
     cell.channel = channel;
     
     return cell;
@@ -97,10 +124,44 @@
 
 }
 
+#pragma mark - 上下联动的方法
+/**
+ *  调整上面的频道标签,变红变大
+ */
+- (void)lastMethop
+{
+    CGFloat needScrollOffsetX = self.currentSelectLabel.center.x - self.channelScrollView.bounds.size.width *0.5;
+    CGFloat maxAllowScrollOffsetX = self.channelScrollView.contentSize.width - self.channelScrollView.bounds.size.width;
+    if (needScrollOffsetX < 0) {
+        needScrollOffsetX = 0;
+    }
+    if (needScrollOffsetX > maxAllowScrollOffsetX) {
+        needScrollOffsetX = maxAllowScrollOffsetX;
+    }
+    
+    [self.channelScrollView setContentOffset:CGPointMake(needScrollOffsetX, 0) animated:YES];
 
+}
 
+- (void)channelClick:(UITapGestureRecognizer *)recognizer
+{
+    CZChannelLabel *channeLabel = (CZChannelLabel *)recognizer.view;
+//    NSLog(@"sss");
+    //计算应该滚动多少
+    self.currentSelectLabel = channeLabel;
+    //调用最终的方法
+    [self lastMethop];
+    //让下面的显示新闻的 collection 滚动
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:channeLabel.tag inSection:0];
+    [self.contentCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionNone animated:NO];
+}
+/**
+ *  z只哎哟 collection 一滚动就调用
+ */
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
 
-
+}
 
 
 @end

@@ -54,7 +54,7 @@
         make.height.equalTo(@30);
         make.trailing.equalTo(self.view).offset(0);
          make.bottom.equalTo(self.view).offset(0);
-         
+        
     }];
     self.pageControl = pageControl;
     
@@ -70,7 +70,7 @@ __weak typeof (self) weakSelf = self;
         
         //滚动到中间那组
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:kMinSection/2];
-        [weakSelf.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition: UICollectionViewScrollPositionLeft  animated:NO];
+        [weakSelf.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition: UICollectionViewScrollPositionNone  animated:NO];
         
     }];
 
@@ -114,7 +114,9 @@ __weak typeof (self) weakSelf = self;
     int currentPage = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width) %self.innerCycles.count;
 //回到
     NSIndexPath *currentIndexPath = [NSIndexPath indexPathForItem:currentPage inSection:kMinSection/2];
-  [self.collectionView scrollToItemAtIndexPath:currentIndexPath atScrollPosition: UICollectionViewScrollPositionLeft  animated:NO];
+  [self.collectionView scrollToItemAtIndexPath:currentIndexPath atScrollPosition: UICollectionViewScrollPositionNone  animated:NO];
+    
+    self.pageControl.currentPage =currentPage;
 }
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
