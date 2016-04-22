@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CC541C013C8039A1D40FAFAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E99E96CC16737CD170F57EB5 /* libPods.a */; };
+		D3E236D01CC9B894004D85A4 /* CZCycleCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E236CF1CC9B894004D85A4 /* CZCycleCollectionViewController.m */; };
+		D3E236D31CC9B8C6004D85A4 /* CZCycles.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E236D21CC9B8C6004D85A4 /* CZCycles.m */; };
+		D3E236D61CC9BEE5004D85A4 /* CZCycleCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D3E236D51CC9BEE5004D85A4 /* CZCycleCollectionViewCell.m */; };
 		D3FCED921CC86F7500C9FC82 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCED911CC86F7500C9FC82 /* main.m */; };
 		D3FCED951CC86F7500C9FC82 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FCED941CC86F7500C9FC82 /* AppDelegate.m */; };
 		D3FCED9B1CC86F7500C9FC82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3FCED991CC86F7500C9FC82 /* Main.storyboard */; };
@@ -30,6 +33,12 @@
 /* Begin PBXFileReference section */
 		32EA31A863AD909298D42A70 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0BC4ACDBA482EAE318756F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D3E236CE1CC9B894004D85A4 /* CZCycleCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCycleCollectionViewController.h; sourceTree = "<group>"; };
+		D3E236CF1CC9B894004D85A4 /* CZCycleCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCycleCollectionViewController.m; sourceTree = "<group>"; };
+		D3E236D11CC9B8C6004D85A4 /* CZCycles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCycles.h; sourceTree = "<group>"; };
+		D3E236D21CC9B8C6004D85A4 /* CZCycles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCycles.m; sourceTree = "<group>"; };
+		D3E236D41CC9BEE5004D85A4 /* CZCycleCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CZCycleCollectionViewCell.h; sourceTree = "<group>"; };
+		D3E236D51CC9BEE5004D85A4 /* CZCycleCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CZCycleCollectionViewCell.m; sourceTree = "<group>"; };
 		D3FCED8D1CC86F7500C9FC82 /* 网易新闻.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网易新闻.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3FCED911CC86F7500C9FC82 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D3FCED931CC86F7500C9FC82 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +101,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D3E236CA1CC9B87E004D85A4 /* Cycle */ = {
+			isa = PBXGroup;
+			children = (
+				D3E236CB1CC9B87E004D85A4 /* Controller */,
+				D3E236CC1CC9B87E004D85A4 /* Model */,
+				D3E236CD1CC9B87E004D85A4 /* View */,
+			);
+			path = Cycle;
+			sourceTree = "<group>";
+		};
+		D3E236CB1CC9B87E004D85A4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D3E236CE1CC9B894004D85A4 /* CZCycleCollectionViewController.h */,
+				D3E236CF1CC9B894004D85A4 /* CZCycleCollectionViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3E236CC1CC9B87E004D85A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3E236D11CC9B8C6004D85A4 /* CZCycles.h */,
+				D3E236D21CC9B8C6004D85A4 /* CZCycles.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3E236CD1CC9B87E004D85A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3E236D41CC9BEE5004D85A4 /* CZCycleCollectionViewCell.h */,
+				D3E236D51CC9BEE5004D85A4 /* CZCycleCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D3FCED841CC86F7500C9FC82 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +184,7 @@
 		D3FCEDA71CC8700000C9FC82 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D3E236CA1CC9B87E004D85A4 /* Cycle */,
 				D3FCEDD11CC8BB6400C9FC82 /* NetWorkTool */,
 				D3FCEDC51CC8AE8700C9FC82 /* News */,
 				D3FCEDBE1CC87C9E00C9FC82 /* Common */,
@@ -403,6 +450,8 @@
 				D3FCEDD41CC8BB8000C9FC82 /* CZNetWorkTool.m in Sources */,
 				D3FCEDD71CC8C4AC00C9FC82 /* CZNewsCell.m in Sources */,
 				D3FCEDBA1CC8775600C9FC82 /* NSArray+Log.m in Sources */,
+				D3E236D61CC9BEE5004D85A4 /* CZCycleCollectionViewCell.m in Sources */,
+				D3E236D31CC9B8C6004D85A4 /* CZCycles.m in Sources */,
 				D3FCEDCD1CC8AF1500C9FC82 /* CZNewsTableViewController.m in Sources */,
 				D3FCEDBD1CC87BD100C9FC82 /* CZChannelLabel.m in Sources */,
 				D3FCEDC41CC881E700C9FC82 /* CZContentCell.m in Sources */,
@@ -412,6 +461,7 @@
 				D3FCEDAE1CC8706000C9FC82 /* CZHomeViewContrller.m in Sources */,
 				D3FCEDB61CC8737C00C9FC82 /* CZChannelModle.m in Sources */,
 				D3FCED921CC86F7500C9FC82 /* main.m in Sources */,
+				D3E236D01CC9B894004D85A4 /* CZCycleCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

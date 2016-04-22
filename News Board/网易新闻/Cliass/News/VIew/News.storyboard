@@ -14,9 +14,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="1Fu-bP-8le">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <connections>
+                                <segue destination="wEn-Lj-4eV" kind="embed" id="mmf-KO-tZv"/>
+                            </connections>
+                        </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BaseCell" id="3rN-Be-iY1" customClass="CZNewsCell">
-                                <rect key="frame" x="0.0" y="28" width="320" height="80"/>
+                                <rect key="frame" x="0.0" y="278" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3rN-Be-iY1" id="PTK-Og-pbg">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
@@ -68,7 +75,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BigCell" rowHeight="180" id="UY2-VY-ZKK" customClass="CZNewsCell">
-                                <rect key="frame" x="0.0" y="108" width="320" height="180"/>
+                                <rect key="frame" x="0.0" y="358" width="320" height="180"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UY2-VY-ZKK" id="bBp-14-WWW">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
@@ -118,7 +125,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreeImage" rowHeight="120" id="wAv-dK-Uts" customClass="CZNewsCell">
-                                <rect key="frame" x="0.0" y="288" width="320" height="120"/>
+                                <rect key="frame" x="0.0" y="538" width="320" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wAv-dK-Uts" id="sdF-ZX-wEr">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
@@ -182,7 +189,68 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zbb-bq-wcD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="259" y="479"/>
+            <point key="canvasLocation" x="137" y="786"/>
+        </scene>
+        <!--Cycle Collection View Controller-->
+        <scene sceneID="36M-I7-RqA">
+            <objects>
+                <collectionViewController id="wEn-Lj-4eV" customClass="CZCycleCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="49m-TT-CS1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.99165481328964233" green="0.89283084869384766" blue="0.0082422951236367226" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="3Nj-VD-EGg">
+                            <size key="itemSize" width="320" height="251"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ECh-eA-hUF" customClass="CZCycleCollectionViewCell">
+                                <rect key="frame" x="0.0" y="-0.5" width="320" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lfm-dg-By7">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="251"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1q-4c-WFj">
+                                            <rect key="frame" x="8" y="222" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Lfm-dg-By7" firstAttribute="leading" secondItem="ECh-eA-hUF" secondAttribute="leading" id="IJL-I7-xNk"/>
+                                    <constraint firstItem="Lfm-dg-By7" firstAttribute="top" secondItem="ECh-eA-hUF" secondAttribute="top" id="Kgr-78-OVx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Lfm-dg-By7" secondAttribute="trailing" id="TZe-SU-Ehw"/>
+                                    <constraint firstAttribute="bottom" secondItem="k1q-4c-WFj" secondAttribute="bottom" constant="8" id="dgp-Pk-D6g"/>
+                                    <constraint firstAttribute="bottom" secondItem="Lfm-dg-By7" secondAttribute="bottom" id="jEu-Bb-qdk"/>
+                                    <constraint firstItem="k1q-4c-WFj" firstAttribute="leading" secondItem="ECh-eA-hUF" secondAttribute="leading" constant="8" id="s7k-Go-Z0W"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="iconImageView" destination="Lfm-dg-By7" id="4Nk-l2-cNl"/>
+                                    <outlet property="titleLabel" destination="k1q-4c-WFj" id="iGZ-pN-oja"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="wEn-Lj-4eV" id="Kju-Ao-kwJ"/>
+                            <outlet property="delegate" destination="wEn-Lj-4eV" id="lYX-Kc-KvA"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <outlet property="cycleFlowLayout" destination="3Nj-VD-EGg" id="A8S-EE-Unr"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YUf-VQ-c0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="39" y="275"/>
         </scene>
     </scenes>
 </document>
