@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CZChannelLabel : UILabel
-
+/**
+ *供外部社会值,大小是从0~1
+ */
+@property (nonatomic,assign)float scale;
 @end

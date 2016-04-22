@@ -20,11 +20,26 @@
         
         self.textAlignment = UITextAlignmentCenter;
 #pragma clang diagnostic pop
-        
+        self.scale = 0;
         self.font = [UIFont systemFontOfSize:20];
     }
 
     return self;
 }
 
+- (void)setScale:(float)scale
+{
+    _scale = scale;
+    //改变颜色
+    //白色是追不纯洁的颜色
+    self.textColor = [UIColor colorWithRed:scale green:0 blue:0 alpha:1.0];
+    //字体
+    CGFloat minScale = 0.8;
+    //最终显示的缩放比例
+    CGFloat lastScale = minScale + (1 - minScale)*scale;
+    self.transform = CGAffineTransformMakeScale( lastScale, lastScale);
+
+
+
+}
 @end

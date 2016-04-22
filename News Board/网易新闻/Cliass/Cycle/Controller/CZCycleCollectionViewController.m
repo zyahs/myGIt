@@ -112,7 +112,7 @@ __weak typeof (self) weakSelf = self;
 {
 //计算滚动到第几页
     int currentPage = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width) %self.innerCycles.count;
-//回到
+//回到中间那种对应的 currentPage 上去
     NSIndexPath *currentIndexPath = [NSIndexPath indexPathForItem:currentPage inSection:kMinSection/2];
   [self.collectionView scrollToItemAtIndexPath:currentIndexPath atScrollPosition: UICollectionViewScrollPositionNone  animated:NO];
     

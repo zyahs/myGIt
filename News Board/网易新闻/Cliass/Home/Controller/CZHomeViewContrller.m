@@ -66,6 +66,10 @@
     for ( NSInteger i = 0 ; i < self.channles.count ; i++) {
         CZChannelLabel *channelLabel = [[CZChannelLabel alloc]init];
         
+        
+        if (i == 0) {
+            channelLabel.scale = 1.0;
+        }
         //1.1设置 frame
         channelLabel.frame = CGRectMake(channelLabelW * i, channelLabelY, channelLabelW, channelLabelH);
         
@@ -140,6 +144,15 @@
     }
     
     [self.channelScrollView setContentOffset:CGPointMake(needScrollOffsetX, 0) animated:YES];
+    //重置所有的 channeLabe 的选中状态
+    for (CZChannelLabel *channeLaeble in self.channelLabels) {
+        if (channeLaeble == self.currentSelectLabel) {
+            channeLaeble.scale = 1.0;
+        }else
+        {
+            channeLaeble.scale =0.0;
+        }
+    }
 
 }
 
@@ -160,8 +173,73 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-
+    //1.计算滚动的偏移量
+    CGFloat value = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    //处理在最左边还往右滚动
+    if (value < 0 || self.channelLabels.count - 1) {
+        return;
+    }
+    //2.计算当前滚动到了第几页
+    int currentPage = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    //3.获取右边的缩放比率
+    CGFloat rightScale = value - currentPage;
+    //4.左边的缩放比率
+    CGFloat leftScale = 1 - rightScale;
+    //5.左边的索引
+    int leftIndex = currentPage;
+    //6.右边的索引
+    int rightIndex = leftIndex + 1;
+    //7.取出左边的 channelLabel
+    CZChannelLabel *leftLabel = self.channelLabels[leftIndex];
+    leftLabel.scale = leftScale;
+    //8.取出右边的 channelLabel
+    if (rightIndex < self.channelLabels.count) {
+        CZChannelLabel *rightLabel = self.channelLabels[rightIndex];
+        rightLabel.scale = rightScale;
+    }
+    
 }
+
+
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    int currentPage = scrollView.contentOffset.x/scrollView.bounds.size.width;
+    
+    self.currentSelectLabel = self.channelLabels[currentPage];
+    
+    [self lastMethop];
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @end
