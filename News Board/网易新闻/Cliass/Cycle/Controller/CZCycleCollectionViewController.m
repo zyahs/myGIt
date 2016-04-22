@@ -9,12 +9,20 @@
 #import "CZCycleCollectionViewController.h"
 #import "CZCycles.h"
 #import "CZCycleCollectionViewCell.h"
+#import <TAPageControl.h>
+#import <Masonry.h>
+#define kMinSection 3
 @interface CZCycleCollectionViewController ()
 /**
  *  <#Description#>
  */
 @property (nonatomic,strong)NSArray *innerCycles;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *cycleFlowLayout;
+
+/**
+ *  <#Description#>
+ */
+@property (nonatomic,weak)TAPageControl *pageControl;
 @end
 
 @implementation CZCycleCollectionViewController
@@ -25,16 +33,44 @@
     
     self.cycleFlowLayout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, 250);
     [self loadData];
+    
+    
+    [self setUpPageController];
 
 }
 
+
+- (void)setUpPageController
+{
+    //创建
+    TAPageControl *pageControl = [[TAPageControl alloc]init];
+    pageControl.dotSize = CGSizeMake(4, 4);
+    //加入到父控件
+    [self.view addSubview:pageControl];
+    
+    //自动布局
+    [pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@100);
+        make.height.equalTo(@30);
+        make.trailing.equalTo(self.view).offset(0);
+         make.bottom.equalTo(self.view).offset(0);
+         
+    }];
+    self.pageControl = pageControl;
+    
+}
 - (void)loadData
 {
 __weak typeof (self) weakSelf = self;
     [CZCycles cycleWithURLString:@"ad/headline/0-4.html" With:^(NSArray *cycles) {
         weakSelf.innerCycles = cycles;
+        weakSelf.pageControl.numberOfPages = cycles.count;
           [weakSelf.collectionView reloadData];
-        NSLog(@"%@",cycles);
+//        NSLog(@"%@",cycles);
+        
+        //滚动到中间那组
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:kMinSection/2];
+        [weakSelf.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition: UICollectionViewScrollPositionLeft  animated:NO];
         
     }];
 
@@ -48,10 +84,10 @@ __weak typeof (self) weakSelf = self;
 
 #pragma mark <UICollectionViewDataSource>
 
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+
+    return kMinSection;
+}
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -72,6 +108,14 @@ __weak typeof (self) weakSelf = self;
 
 #pragma mark <UICollectionViewDelegate>
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+//计算滚动到第几页
+    int currentPage = (int)(scrollView.contentOffset.x / scrollView.bounds.size.width) %self.innerCycles.count;
+//回到
+    NSIndexPath *currentIndexPath = [NSIndexPath indexPathForItem:currentPage inSection:kMinSection/2];
+  [self.collectionView scrollToItemAtIndexPath:currentIndexPath atScrollPosition: UICollectionViewScrollPositionLeft  animated:NO];
+}
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
